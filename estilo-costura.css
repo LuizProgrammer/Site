@@ -34,7 +34,7 @@ body{
   font-weight: 900;
   color: purple;
   text-decoration: underline dashed;
-  text-decoration-thickness: 0.5px;
+  text-decoration-thickness: 1px;
   white-space: nowrap;
 }
 .logo > i{
@@ -120,11 +120,11 @@ nav{display: flex;justify-content: space-between;}
 
 /* Sessão Sobre a empresa */
 .sobre{
-  height: 80vh;
+  height: 100vh;
   background-image: url("reflexobg.png");
-  background-position: top;
+  background-position: top center;
   background-repeat: no-repeat;
-  background-size: 110%;
+  background-size: cover;
 }
 .sobre > div{
   display: flex;
@@ -188,19 +188,50 @@ nav{display: flex;justify-content: space-between;}
 }
 
 /* estilo do formulario */
-input[type=text], select, textarea {
+form{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 350px;
+  padding: 20px;
+  background: var(--bg-color);
+  box-shadow: 0 0 10px purple;
+  border-radius: 10px;
+}
+form::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+form > .logo{
+  box-sizing: content-box;
+  margin: 40px auto;
+  font-size: 2em;
+  line-height: 0;
+}
+
+input[type=text],input[type=password] {
   width: 100%;
   padding: 4px;
-  border: 1px solid purple;
+  border: 0.5px solid gray;
   border-radius: 4px;
   resize: vertical;
+}
+input[type=text],input[type=password]:focus{
+  outline-color: purple;
 }
 label {
   color: purple;
   padding: 10px 12px 0 0;
   display: inline-block;
 }
-input[type=submit] {
+input[type=submit]{
+  display: inline-block;
+  margin-top: 20px;
   background: purple;
   color: white;
   padding: 12px 20px;
@@ -208,12 +239,10 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
   float: right;
+  width: 10em;
 }
 input[type=submit]:hover {
   box-shadow: 0 0 10px gray;
   transform: translateY(-5px);
   transition: 1s;
-}
-input[type=text]:focus{
-  border: solid 1px black;
 }
