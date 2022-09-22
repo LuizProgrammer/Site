@@ -34,7 +34,8 @@ body{
   font-weight: 900;
   color: purple;
   text-decoration: underline dashed;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 3px;
+  -webkit-ext-decoration-thickness: 3px;
   white-space: nowrap;
 }
 .logo > i{
@@ -60,7 +61,7 @@ header > a:nth-child(1){
 }
 #menu-op{display: none;}
 #menu-cl{display: none;}
-nav{display: flex;justify-content: space-between;}
+nav{display: flex;justify-content: space-between; align-items: center;}
 .menu{
   display: flex;
   align-items: center;
@@ -87,6 +88,22 @@ nav{display: flex;justify-content: space-between;}
   color: white;
   transition: .2s;
 }
+
+.login{
+  font-weight: 900;
+  font-size: 1.2em;
+  color: transparent;
+  background-image: linear-gradient(to right, purple, blue);
+  background-size: cover;
+  -webkit-background-clip: text;
+  margin-right: 20px;
+}
+
+.login:hover{
+  background: linear-gradient(to left, purple, blue);
+  -webkit-background-clip: text;
+}
+
 .bt-cadastro{
   color: white;
   padding: 5px 1.5em;
@@ -180,11 +197,9 @@ nav{display: flex;justify-content: space-between;}
   z-index: 1;
 }
 .servicos > .area_servico > .form_servico{
-  width: 350px;
-  height: 400px;
-  padding: 20px;
-  border-left: none;
-  background: var(--bg-color);
+  position: static;
+  transform: none;
+  border-radius: 0;
 }
 
 /* estilo do formulario */
@@ -196,7 +211,7 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 350px;
+  width: 350px;
   padding: 20px;
   background: var(--bg-color);
   box-shadow: 0 0 10px purple;
@@ -221,9 +236,25 @@ input[type=text],input[type=password] {
   border-radius: 4px;
   resize: vertical;
 }
-input[type=text],input[type=password]:focus{
+input[type=text],input[type=password],select,option:focus{
   outline-color: purple;
 }
+
+select{
+  width: 100%;
+  padding: 4px;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+  resize: vertical;
+}
+textarea{
+  width: 100%;
+  padding: 4px;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+  resize: vertical;
+}
+
 label {
   color: purple;
   padding: 10px 12px 0 0;
