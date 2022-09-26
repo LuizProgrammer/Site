@@ -89,4 +89,6 @@ class TrataDados {
   }
 }
 
-var dados = new TrataDados();
+//var dados = new TrataDados(); a classe está sendo "chamada" dentro dela mesma, possivel conflito
+
+} //fechamento da classe
